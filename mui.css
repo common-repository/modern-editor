@@ -1,0 +1,470 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+    position: fixed;
+}
+
+#wpbody {
+    top: 60px;
+    width: calc(100% - 280px);
+    height: calc(100vh - 92px);
+    overflow: auto;
+    padding: 0px 20px 0px 40px;
+    box-sizing: border-box;
+}
+
+#wpcontent {
+    height: 100%;
+    padding-left: 0px;
+}
+
+/*
+#adminmenuwrap {
+    position: relative;
+    float: left;
+    z-index: 9990;
+    overflow-y: auto;
+    max-height: calc(100vh - 30px);
+}
+*/
+
+.button.mui-disabled {
+    color: #a0a5aa!important;
+    border-color: #ddd!important;
+    background: #f7f7f7!important;
+    box-shadow: none!important;
+    text-shadow: 0 1px 0 #fff!important;
+    cursor: default;
+    transform: none!important;
+}
+
+.button-primary.mui-disabled {
+    color: #66c6e4!important;
+    background: #008ec2!important;
+    border-color: #008ec2!important;
+    box-shadow: none!important;
+    text-shadow: none!important;
+    cursor: default;
+}
+
+#publishing-action .spinner {
+    display: none!important;
+}
+
+#minor-publishing-actions .spinner {
+    display: none!important;
+}
+
+#publishing-action .mui-active.spinner,
+#minor-publishing-actions .mui-active.spinner {
+    visibility: visible!important;
+    display: inline-block!important;
+}
+
+#wpbody-content {
+    overflow: auto!important;
+}
+
+#wpbody-content > .wrap {
+	padding-top: 20px;
+}
+
+#post-body {
+    margin-right: 2px!important;
+}
+
+#edit-slug-buttons .cancel.button-link {
+	display: none;
+}
+
+/* önce bi tepeye zımbalayalım */
+#submitdiv {
+    position: fixed;
+    top: 32px;
+    left: calc(160px);
+    width: calc(100% - 160px);
+    z-index: 2;
+    box-sizing: border-box;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    padding: 12px 17px 12px 22px;
+    height: 60px;
+}
+
+/*
+#adminmenu {
+    height: calc(100vh - 50px);
+    overflow: auto;
+    position: fixed;
+}
+*/
+
+
+
+body.folded #submitdiv {
+    left: 36px;
+    width: calc(100% - 36px);
+}
+
+/* aç kapa tuşunu gizleyelim
+   header'a da gerek yok  */
+#submitdiv .handlediv,
+#submitdiv .hndle {
+	display: none;
+}
+
+/* publish and delete part */
+#submitdiv #major-publishing-actions {
+    display: flex;
+    flex-direction: row-reverse;
+    background: transparent;
+    border: none;
+    width: fit-content;
+    padding: 0;
+}
+
+/* save draft and preview part
+   post status, visibility part etc  */
+#submitdiv #minor-publishing-actions,
+#submitdiv #misc-publishing-actions{
+    display: flex;
+    width: fit-content;
+	padding: 0;
+    align-items: center;
+}
+
+/* üstteki blokları yanyana koyalım */
+#submitdiv .submitbox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*
+| draft, preview | ile | status, visiblility |
+yer değiştirsin
+*/
+
+#submitdiv #minor-publishing {
+    display: flex;
+    width: -webkit-fill-available;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+#submitdiv #minor-publishing .clear {
+	display: none;
+}
+
+/* new delete button */
+
+#submitdiv #delete-action {
+    line-height: unset;
+    display: flex;
+    align-items: center;
+}
+
+#submitdiv a.submitdelete.deletion {
+    font-size: 0px;
+    text-decoration: none;
+    min-width: 1px;
+    height: fit-content;
+    margin-left: 13px;
+}
+
+#submitdiv .submitdelete.deletion:before {
+    content: "\f182";
+    font-size: 22px;
+    font-family: dashicons;
+    color: #c4c4c4;
+}
+
+#submitdiv .submitdelete.deletion:hover:before {
+    color: #aa0000;
+}
+
+/* new spinners on buttons */
+#submitdiv #save-action,
+#submitdiv #publishing-action,
+#submitdiv #preview-action {
+	position: relative;
+}
+
+/* new spinners on buttons */
+#submitdiv #publishing-action,
+#submitdiv #preview-action {
+	margin-left: 6px;
+}
+
+#submitdiv #save-action .spinner,
+#submitdiv #publishing-action .spinner {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-position: center;
+    height: 100%;
+    background-color: #f7f7f7;
+    opacity: 1;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+}
+
+#submitdiv #minor-publishing-actions input#save-post,
+#submitdiv #minor-publishing-actions a.preview.button,
+#submitdiv #minor-publishing-actions input#publish.button {
+    height: 35px;
+    line-height: 33px;
+}
+
+
+#submitdiv input#publish.button {
+    height: 35px;
+    line-height: 35px;
+}
+
+#submitdiv #minor-publishing-actions #message {
+	display: inline-block;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 15px;
+}
+
+#submitdiv #minor-publishing-actions #message p {
+    padding: 0;
+    background-color: #24D260;
+    border-radius: 3px;
+    color: white;
+    padding: 3px 9px;
+    margin: 0;
+    font-size: 13px;
+}
+
+#submitdiv #minor-publishing-actions #message p a {
+    display: none;
+}
+
+/* status, visiblility, schedule part */
+
+.misc-pub-section {
+    padding: 6px 20px 8px!important;
+}
+
+.misc-pub-section > a.hide-if-no-js {
+    text-decoration: none;
+    line-height: 0px;
+    vertical-align: bottom;
+    position: absolute;
+    margin-left: 5px;
+}
+
+.misc-pub-section > a.hide-if-no-js[style="display: block;"] {
+    display: inline-block!important;
+}
+
+.misc-pub-section > a.hide-if-no-js > span:first-child {
+    display: none;
+}
+
+.misc-pub-section > a.hide-if-no-js:before {
+	content: "\f464";
+    font-family: dashicons;
+    font-size: 18px;
+    line-height: normal;
+}
+
+.misc-pub-section:before,
+.misc-pub-section > #timestamp:before {
+    display: none!important;
+}
+
+
+/* bar popups */
+
+#submitdiv #post-status-select,
+#submitdiv #post-visibility-select,
+#submitdiv #timestampdiv {
+    position: absolute;
+    background-color: white;
+    padding: 15px;
+    margin-top: 15px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.1);
+    border-radius: 5px;
+    /* margin-top: 12px; */
+    /* background-color: rgba(0,0,0); */
+    border: 1px solid #ccd0d4;
+    /* position: relative;  */
+}
+
+div#post-status-select:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    margin-top: -4px;
+    background-color: white;
+    top: 0px;
+    transform: rotate(45deg);
+    z-index: 1;
+    border: 1px solid #ccd0d4;
+}
+
+div#post-status-select:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 11px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* message notification */
+
+#message {
+	width: fit-content;
+	max-width: 420px;
+}
+
+/* inspector */
+div#postbox-container-1 {
+	position: fixed;
+    top: 91px;
+    right: 0px;
+    /* width: max-content; */
+    /* position: relative; */
+    margin-right: unset!important;
+    z-index: 1;
+}
+
+#side-sortables {
+	/* margin-top: -58px; */
+    /* margin-left: 21px; */
+    background-color: white;
+    /* margin-bottom: -100px; */
+    /* position: fixed; */
+    /* z-index: 1; */
+    border-left: 1px solid #ccd0d4;
+    height: calc(100vh - 92px);
+    overflow-y: auto;
+}
+
+#side-sortables .inside {
+    margin: 10px;
+}
+
+#side-sortables #revisionsdiv .inside {
+    max-height: 200px!important;
+    overflow: auto;
+}
+
+#side-sortables h2.hndle {
+    padding: 14px 22px 14px;
+}
+
+#side-sortables .handlediv {
+    width: 45px;
+    height: 45px;
+}
+
+#side-sortables [id$="-tabs"] li {
+    padding: 10px 10px 6px 10px;
+}
+
+#side-sortables .postbox:not(#submitdiv) {
+    margin-bottom: -1px;
+    border-left: none;
+}
+
+#poststuff #side-sortables .stuffbox>h3, #poststuff #side-sortables h2, #poststuff #side-sortables h3.hndle {
+    border-bottom: none;
+}
+
+.sortable-placeholder {
+	margin-bottom: 0px;
+}
+
+#holder {
+	position: fixed;
+    top: 0px;
+    z-index: 99999999999999999999;
+    display: block;
+    left: 0px;
+    width: 500px;
+    height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+
+#side-sortables ul.post-revisions.hide-if-no-js {
+    position: relative;
+}
+
+#side-sortables ul.post-revisions.hide-if-no-js:before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: #007bba;
+    margin-left: 7px;
+    overflow: auto;
+    box-sizing: border-box;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
+#side-sortables .post-revisions li {
+    width: fit-content;
+    position: relative;
+    margin-top: 12px;
+}
+
+#side-sortables .post-revisions li:before {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    content: "";
+    background-color: white;
+    border: 1px solid #007bba;
+    border-radius: 50%;
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+
+#side-sortables .post-revisions li:after {
+    content: "";
+    width: 12px;
+    background-color: white;
+    height: 100%;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#side-sortables .post-revisions img.avatar {
+    display: none;
+}
+
+#side-sortables .post-revisions a {
+    position: absolute;
+    left: 0px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+fieldset.columns-prefs {
+    display: none;
+}
